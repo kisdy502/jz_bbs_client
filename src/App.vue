@@ -1,11 +1,9 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <!-- <HelloWorld msg="Welcome to Your Vue.js App1"/> -->
-  <!-- <Book/> -->
+  <img alt="Vue logo" src="./assets/logo.png" width="32" height="32" />
   <p>
     <!--使用 router-link 组件进行导航 -->
     <router-link to="/login">Login</router-link> |
-    <router-link to="/register">Register</router-link>
+    <router-link to="/register">Register</router-link> |
     <router-link to="/user/33">User Detail</router-link>
   </p>
 

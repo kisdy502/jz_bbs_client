@@ -1,11 +1,12 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-// import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+import ElementPlus from 'element-plus';
+import 'element-plus/theme-chalk/index.css';
 import router from './router'
+import store from "./store";
+import '@/permission'
 
-createApp(App).use(router).mount('#app')
-//将router作为默认导出
-export default router
+createApp(App).use(store).use(router).use(ElementPlus).mount('#app')
+
 
 
