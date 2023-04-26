@@ -13,13 +13,14 @@ router.beforeEach((to, from, next) => {
                 store.dispatch('GetInfo').then(res => { // 拉取用户信息
                     let menus = res.data.menus;
                     let username = res.data.username;
-                    console.log("menus:"+menus)
-                    console.log("username:"+username)
-                    // store.dispatch('GenerateRoutes', { menus, username }).then(() => { // 生成可访问的路由表
-                    //     router.addRoutes(store.getters.addRouters); // 动态添加可访问路由表
-                    //     next({ ...to, replace: true })
-                    // })
-                    next({ ...to, replace: true })
+                    console.log("menus:" + menus)
+                    console.log("username:" + username)
+                    store.dispatch('GenerateRoutes', { menus, username }).then(() => { // 生成可访问的路由表
+                        store.getters.addRouters.forEach((rt) => {
+                            router.addRoute(rt); // 动态添加可访问路由表
+                        });
+                        next({ ...to, replace: true })
+                    })
                 }).catch((err) => {
                     store.dispatch('FedLogOut').then(() => {
                         console.error("logou failed!" + err)

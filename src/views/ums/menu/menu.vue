@@ -1,22 +1,17 @@
 <template>
- 
-  <p>home</p>
-
+  <div>Menu</div>
   <div>
     <!-- 路由匹配到的组件将渲染在这里 -->
     <router-view></router-view>
   </div>
 </template>
 
-<script type="text/javascript">
+<script>
 export default {
-  name: "app",
-  data() {
-    return {};
-  },
-  components: {},
-};
+
+}
 </script>
 
-<style  scoped>
+<style>
+
 </style>

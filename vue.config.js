@@ -8,6 +8,7 @@ function resolve(dir) {
 
 module.exports = defineConfig({
   transpileDependencies: true,
+  lintOnSave:false,
   chainWebpack: config => {
     config.resolve.alias
       .set("@", resolve("src"))
