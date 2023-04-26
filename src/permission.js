@@ -9,7 +9,7 @@ router.beforeEach((to, from, next) => {
         if (to.path === '/login') {
             next({ path: '/' })
         } else {
-            if (store.getters.roles.length === 0) {
+            if (store.getters.roles.length == 0) {
                 console.log("store.getters.roles.length is zero!")
                 store.dispatch('GetInfo').then(res => { // 拉取用户信息
                     let menus = res.data.menus;
