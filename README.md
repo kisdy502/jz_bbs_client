@@ -32,7 +32,8 @@ npm install vuex --save
 npm install axios --save
 npm install path --save
 npm install js-cookie --save
-
+npm install npm install sass-loader --save
+npm install node-sass --save
 
 ####
 实现需求

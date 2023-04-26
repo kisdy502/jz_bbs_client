@@ -6,6 +6,8 @@ import router from './router'
 import store from "./store";
 import '@/permission'
 
+import '@/styles/index.scss' // global css
+
 createApp(App).use(store).use(router).use(ElementPlus).mount('#app')
 
 

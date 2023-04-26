@@ -1,6 +1,7 @@
 //导入vue-router
 import { createRouter, createWebHashHistory } from "vue-router"
-import Layout from '../views/Home'
+import { shallowRef } from 'vue'
+import Layout from '@/views/layout/Layout'
 
 export const constantRouterMap = [
     { path: '/login', component: () => import('@/views/Login'), hidden: true },
@@ -18,32 +19,10 @@ export const constantRouterMap = [
     }
 ]
 
-
-//创建路由表
-const routes = [
-    { path: '/', component: () => import('@/views/Home.vue') },
-    { path: '/login', component: () => import('@/views/Login.vue') },
-    { path: '/register', component: () => import('@/views/Register.vue') },
-    {
-        path: '/user/:id', component: () => import('@/views/User.vue'),
-        children: [
-            {
-                path: 'profile', component: () => import('@/views/user/Profile.vue'),
-            },
-            {
-                path: 'posts', component: () => import('@/views/user/Posts.vue'),
-            }
-        ]
-    }
-
-]
-
-console.log(routes)
-
 export const asyncRouterMap = [
     {
       path:'/ums',
-      component: Layout,
+      component: shallowRef(Layout),
       redirect: '/ums/admin',
       name: 'ums',
       meta: {title: '权限', icon: 'ums'},
